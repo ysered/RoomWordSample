@@ -10,14 +10,11 @@ import androidx.lifecycle.LiveData;
 
 public class Repository {
 
-    private WordRoomDatabase database;
-
     private WordDao wordDao;
-
     private LiveData<List<Word>> allWords;
 
     public Repository(Application application) {
-        database = WordRoomDatabase.getDatabase(application);
+        WordRoomDatabase database = WordRoomDatabase.getDatabase(application);
         wordDao = database.wordDao();
         allWords = wordDao.getAllWords();
     }

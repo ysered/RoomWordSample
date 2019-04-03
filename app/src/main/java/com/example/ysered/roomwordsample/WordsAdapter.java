@@ -52,7 +52,8 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.WordViewHold
         }
 
         void bind(Word word) {
-            wordText.setText(word.getWord());
+            String text = word.getWord();
+            wordText.setText(text);
         }
     }
 }
